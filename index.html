@@ -1,18 +1,17 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mon Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mon Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <header>
-        <nav>
-            <h1>Mon Portfolio</h1>
-            <button class="menu-toggle" onclick="toggleMenu()">☰</button>
-            <button class="menu-toggle" aria-label="Menu">&#9776; Menu</button>
-      <ul class="nav-links">
+  <header>
+    <nav>
+      <h1>Mon Portfolio</h1>
+      <button class="menu-toggle" id="menuButton">&#9776; Menu</button>
+      <ul class="nav-links" id="navLinks">
         <li><a href="#accueil">Accueil</a></li>
         <li><a href="#apropos">À propos</a></li>
         <li><a href="#projets">Projets</a></li>
@@ -20,60 +19,64 @@
         <li><a href="#contact">Contact</a></li>
         <li><a href="cv.pdf" download>Télécharger CV</a></li>
       </ul>
-        </nav>
-    </header>
+    </nav>
+  </header>
 
-    <section id="accueil">
-        <div class="presentation-box">
-            <h2>Développeur Web & Mobile</h2>
-            <p>Bonjour, je suis <strong>Guissou Amsa</strong>, étudiant en Systèmes Informatiques...</p>
-            <a href="#contact" class="cta-button">Me contacter</a>
-        </div>
-    </section>
+  <section id="accueil">
+    <h2>Bienvenue</h2>
+    <p>Je suis Guissou Amsa, développeur Web & Mobile.</p>
+  </section>
 
-    <section id="apropos">
-        <h2>À propos</h2>
-        <p>Je suis étudiant en Licence...</p>
-    </section>
+  <section id="apropos">
+    <h2>À propos</h2>
+    <p>Je suis étudiant en Systèmes Informatiques, passionné par le développement Web et Mobile.</p>
+  </section>
 
-    <section id="projets">
-        <h2>Mes Projets</h2>
-        <div class="projet">
-            <h3>Site vitrine Hotel pousga</h3>
-            <p>Création d’un site vitrine professionnel en HTML/CSS...</p>
-        </div>
-        <!-- Ajoute les autres projets ici -->
-    </section>
+  <section id="projets">
+    <h2>Projets</h2>
+    <p>Voici quelques projets réalisés en HTML, CSS, Flutter, etc.</p>
+  </section>
 
-    <section id="competences">
-        <h2>Compétences</h2>
-        <ul class="skills">
-            <li>HTML</li>
-            <li>CSS</li>
-            <li>JavaScript</li>
-            <li>Flutter</li>
-        </ul>
-    </section>
+  <section id="competences">
+    <h2>Compétences</h2>
+    <ul>
+      <li>HTML</li>
+      <li>CSS</li>
+      <li>JavaScript</li>
+      <li>Flutter</li>
+      <li>Dart</li>
+    </ul>
+  </section>
 
-    <section id="contact">
-        <h2>Contact</h2>
-        <form action="https://formspree.io/f/mqaqlqba" method="POST">
-            <input type="text" name="nom" placeholder="Votre nom" required>
-            <input type="email" name="email" placeholder="Votre email" required>
-            <textarea name="message" placeholder="Votre message" required></textarea>
-            <button type="submit">Envoyer</button>
-        </form>
-    </section>
+  <section id="contact">
+    <h2>Contact</h2>
+    <form action="https://formspree.io/f/mqaqlqba" method="POST">
+      <input type="text" name="nom" placeholder="Votre nom" required>
+      <input type="email" name="email" placeholder="Votre email" required>
+      <textarea name="message" placeholder="Votre message" required></textarea>
+      <button type="submit">Envoyer</button>
+    </form>
+  </section>
 
-    <footer>
-        <p>&copy; 2025 Guissou Amsa. Tous droits réservés.</p>
-    </footer>
+  <footer>
+    <p>&copy; 2025 Guissou Amsa. Tous droits réservés.</p>
+  </footer>
 
-    <script>
-        function toggleMenu() {
-            const menu = document.getElementById("menu");
-            menu.classList.toggle("open");
-        }
-    </script>
+  <script>
+    const menuButton = document.getElementById('menuButton');
+    const navLinks = document.getElementById('navLinks');
+
+    menuButton.addEventListener('click', () => {
+      navLinks.classList.add('active');
+      menuButton.style.display = 'none';
+    });
+
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+        menuButton.style.display = 'block';
+      });
+    });
+  </script>
 </body>
 </html>
