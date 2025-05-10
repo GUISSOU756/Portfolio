@@ -10,8 +10,7 @@
   <header>
     <nav>
       <h1>Mon Portfolio</h1>
-      <button class="menu-toggle" onclick="toggleMenu()">Menu</button>
-
+      <button class="menu-toggle" id="menuButton">Menu</button>
       <ul class="nav-links" id="navLinks">
         <li><a href="#accueil">Accueil</a></li>
         <li><a href="#apropos">À propos</a></li>
@@ -24,18 +23,20 @@
   </header>
 
   <section id="accueil">
-    <h2>Bienvenue</h2>
-    <p>Je suis Guissou Amsa, développeur Web & Mobile.</p>
+    <div class="presentation-box">
+      <h2>Développeur Web & Mobile</h2>
+      <p>Bonjour, je suis <strong>Guissou Amsa</strong>, étudiant en Systèmes Informatiques spécialisé dans le développement d'applications web et mobiles.</p>
+      <p>Passionné, curieux et rigoureux, je conçois des solutions numériques efficaces et modernes. N'hésitez pas à me contacter pour toute collaboration ou projet.</p>
+      <a href="#contact" class="cta-button">Me contacter</a>
+    </div>
   </section>
 
   <section id="apropos">
     <h2>À propos</h2>
-    <p>Je suis étudiant en Systèmes Informatiques, passionné par le développement Web et Mobile.</p>
+    <p>Je suis étudiant en Licence de Systèmes Informatiques, spécialisé en développement web, ainsi qu’en conception d’applications web et mobiles...</p>
   </section>
 
-  </section>
-
-    <section id="projets">
+  <section id="projets">
         <h2>Mes Projets</h2>
       
         <div class="projet">
@@ -82,9 +83,9 @@
       </section>
 
   <section id="competences">
-        <h2>Compétences</h2>
-      
-        <div class="competence-categorie">
+    <h2>Compétences</h2>
+
+    <div class="competence-categorie">
           <h3>Développement Web</h3>
           <ul>
             <li>HTML</li>
@@ -119,6 +120,7 @@
           </ul>
         </div>
       </section>
+      
 
   <section id="contact">
     <h2>Contact</h2>
@@ -131,7 +133,7 @@
   </section>
 
   <footer>
-    <p>&copy; 2025 Guissou Amsa Disponible pour la creation de vos site web sur mesure</p>
+    <p>&copy; 2025 Guissou Amsa. Tous droits réservés.</p>
   </footer>
 
   <script>
@@ -139,14 +141,12 @@
     const navLinks = document.getElementById('navLinks');
 
     menuButton.addEventListener('click', () => {
-      navLinks.classList.add('active');
-      menuButton.style.display = 'none';
+      navLinks.classList.toggle('open');
     });
 
     navLinks.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
-        navLinks.classList.remove('active');
-        menuButton.style.display = 'block';
+        navLinks.classList.remove('open');
       });
     });
   </script>
